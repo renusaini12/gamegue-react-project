@@ -1,0 +1,29 @@
+/*  Hover Underline Animation (Purpul with center origin) */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    top: 30px;
+    left: 0;
+    background-color: #9841ff;
+    transition: transform 0.3s cubic-bezier(.45, .10, 0, .95);
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+.hover-underline-animation.center::after {
+    transform-origin: bottom center;
+}
+
+.hover-underline-animation.center:hover::after {
+    transform-origin: bottom center;
+}
